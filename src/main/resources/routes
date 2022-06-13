@@ -1,0 +1,6 @@
+
+
+POST          /api/user/register           bbs.controllers.user.UserController.register
+POST          /api/user/login              bbs.controllers.user.UserController.login
+GET           /api/user/:email             bbs.controllers.user.UserController.getUserByEmail(email:String)
+
