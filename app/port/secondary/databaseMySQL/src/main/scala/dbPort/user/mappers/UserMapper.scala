@@ -16,7 +16,7 @@ object UserMapper {
       username =record.username,
       address =record.address,
       phone_number = record.phone_number,
-      gender =record.gender,x
+      gender =record.gender,
       email = record.email,
       password = record.password,
       role =record.role,

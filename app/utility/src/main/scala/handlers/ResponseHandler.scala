@@ -45,6 +45,11 @@ trait ResponseHandler {
       )
    }
 
+   def okCreateUser(email: String): JsObject = {
+      Json.obj(
+         "email" -> email
+      )
+   }
    /**
     * Validate whether user request comes with valid token. If does, return claims extracted from the request header
     * @param request User request

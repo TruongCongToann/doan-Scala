@@ -13,7 +13,7 @@ object ImplicitsUsed {
 
    implicit val jodaDateRead: Reads[DateTime] = Reads[DateTime](
       jsValue => jsValue.validate[String].map[DateTime](
-         dataString => DateTime.parse(dataString, DateTimeFormat.forPattern("dd-MM-yyyy"))
+         dataString => DateTime.parse(dataString, DateTimeFormat.forPattern("yyyy-MM-dd"))
       )
    )
 

@@ -20,6 +20,8 @@ trait UserRepository {
 
    def findByEmail(email:String): Try[User]
 
+   def updateUser(email: String, user: User): Try[Boolean]
+
    def findByID(id: Long): Try[User]
    /**
     * Find post by id

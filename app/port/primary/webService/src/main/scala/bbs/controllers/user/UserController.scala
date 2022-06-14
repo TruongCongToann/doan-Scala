@@ -2,7 +2,7 @@ package bbs.controllers.user
 
 import bbs.controllers.user.UserConverter._
 import bbs.services.user.UserServices
-import bbs.user.models.User
+import bbs.user.models.{User, UserID}
 import handlers.error_list.ErrorList
 import handlers.{BBSException, BBSResponse, ResponseHandler}
 import org.slf4j.{Logger, LoggerFactory}
@@ -110,6 +110,27 @@ class UserController @Inject()(
                case _ => throw new BBSException(ErrorList.UNDEFINED_CODE)
             }
          }
+   }
+
+   def updateUser(email: String): Action[AnyContent] = Action {
+      request => {
+         loggingAction {
+
+            val payload: Payload = authorityInterceptor(request)
+            val isUpdated = for {
+               user: User <- request.body.asJson.map(_.as[User])
+               result <- userServices.updateUser(email, user, payload).toOption
+
+            } yield result
+
+
+
+            isUpdated match {
+               case Some(true) => okCreateUser(email)
+               case _ => throw new BBSException(ErrorList.CANNOT_UPDATE_POST)
+            }
+         }
+      }
    }
 
 

@@ -7,10 +7,10 @@ import java.util.Date
 /**
  * A form used for both user login and registration
  *
- * @param id       Optional field, used in case wants to perform user statistics
+ * @param user_id       Optional field, used in case wants to perform user statistics
  * @param email    Required field, used when performs login and registration
  * @param password Required field, used when performs login and registration
- * @param fullName Optional field, used when want to display user name at landing page.
+ * @param full_name Optional field, used when want to display user name at landing page.
  */
 case class User(
                  user_id: Option[UserID] = None,
@@ -29,5 +29,5 @@ case class User(
                  full_name:Option[String] = None
                ){
    override def toString: String =
-      s"User: id=$user_id, email=$email, fullName=$full_name"
+      s"User: id=$user_id, email=$email, full_name=$full_name"
 }

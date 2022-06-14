@@ -11,6 +11,8 @@ object UserDAO extends SkinnyCRUDMapper[UserRecord] {
 
    override def defaultAlias: Alias[UserRecord] = createAlias("u")
 
+   def u: Alias[UserRecord] = defaultAlias
+
 
    override def primaryKeyFieldName: String = "user_id"
 
