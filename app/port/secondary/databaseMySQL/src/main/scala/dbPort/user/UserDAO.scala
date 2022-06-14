@@ -31,7 +31,7 @@ object UserDAO extends SkinnyCRUDMapper[UserRecord] {
          created_at = rs.get(n.created_at),
          updated_at = rs.get(n.updated_at),
          doctorid = rs.get(n.doctorid),
-         full_name = rs.get(n.full_name)
+         full_name = rs.get(n.full_name),
 
       )
    }
@@ -50,4 +50,12 @@ object UserDAO extends SkinnyCRUDMapper[UserRecord] {
 
    def existsById(id: Long): Try[Boolean] = Try(countBy(sqls.eq(defaultAlias.user_id, id)) == 1)
 
+//   def updateByEmail(email: String, user: UserRecord) = Try{
+//      updateBy(sqls.eq(u.mail, email)).withNamedValues(
+//         column.user_id -> user.user_id,
+//         column.username -> user.username,
+//         column.address -> user.address,
+//
+//      )
+//   }
 }

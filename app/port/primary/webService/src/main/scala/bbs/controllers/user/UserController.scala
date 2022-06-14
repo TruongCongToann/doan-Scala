@@ -22,7 +22,6 @@ class UserController @Inject()(
 
    override val logger: Logger = LoggerFactory.getLogger(getClass)
 
-
    def register: Action[AnyContent] = Action {
       implicit request => {
          val userForm = request.body.asJson.map(_.as[User])

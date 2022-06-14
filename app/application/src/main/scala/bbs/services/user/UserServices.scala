@@ -38,14 +38,6 @@ class UserServices @Inject()(userRepository: UserRepository) {
         userRepository.register(userForm)
       }
     }
-
-//    if (userRepository.existsByEmail(userForm.email.get) != true) {
-//
-//
-//    }
-//    else {
-//      Failure(new BBSException(ErrorList.EMAIL_EXISTED))
-//    }
   }
 
   /**

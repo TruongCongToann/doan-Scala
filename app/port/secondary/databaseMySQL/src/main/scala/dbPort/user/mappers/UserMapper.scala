@@ -50,7 +50,6 @@ object UserMapper {
       updated_at = Some(DateTime.now()),
       doctorid = user.doctorid,
       full_name = user.full_name,
-
     )
   }
 }

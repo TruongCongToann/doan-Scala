@@ -27,7 +27,7 @@ object UserConverter {
            (JsPath \ "created_at").readNullable[DateTime] and
            (JsPath \ "updated_at").readNullable[DateTime] and
            (JsPath \ "doctorid").readNullable[Int] and
-            (JsPath \ "full_name").readNullable[String]
+           (JsPath \ "full_name").readNullable[String]
         ) (User.apply _)
 
    implicit val userWrite: Writes[User] = (user: User) =>

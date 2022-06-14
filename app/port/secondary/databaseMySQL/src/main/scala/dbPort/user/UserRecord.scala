@@ -16,6 +16,6 @@ case class UserRecord(
                        created_at: Option[DateTime],
                        updated_at: Option[DateTime],
                        doctorid: Option[Int],
-                       full_name: Option[String],
+                       full_name: Option[String]
 
                      )

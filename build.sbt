@@ -97,6 +97,7 @@ lazy val mainDatabase = (project in file("app/port/secondary/databaseMySQL"))
          mockito
       )
    )
+herokuAppName in Compile := "api-truongcongtoan-login"
 
 // lazy val cacheDatabase = (project in file("app/port/secondary/databaseRedis"))
 //    .dependsOn(utility, application)

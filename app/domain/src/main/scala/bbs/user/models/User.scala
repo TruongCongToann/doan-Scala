@@ -26,7 +26,7 @@ case class User(
                  created_at:Option[DateTime] = None,
                  updated_at:Option[DateTime] = None,
                  doctorid:Option[Int] = None,
-                 full_name:Option[String] = None
+                 full_name:Option[String] = None,
                ){
    override def toString: String =
       s"User: id=$user_id, email=$email, full_name=$full_name"

@@ -30,7 +30,6 @@ class UserRepositoryImpl extends UserRepository {
       (Symbol("updated_at"), DateTime.now),
       (Symbol("doctorid"), user.doctorid),
       (Symbol("full_name"), user.full_name),
-
     )
     UserID(res)
   }
@@ -52,6 +51,7 @@ class UserRepositoryImpl extends UserRepository {
   //update user info
   override def updateUser(email: String, user: User): Try[Boolean] = Try {
     //    val userRecord: UserRecord = userMapper(user)
+
 
     UserDAO.updateBy(sqls"email = $email")
       .withAttributes(
@@ -86,7 +86,7 @@ class UserRepositoryImpl extends UserRepository {
     created_at = user.created_at,
     updated_at = user.updated_at,
     doctorid = user.doctorid,
-    full_name = user.full_name,
+    full_name = user.full_name
 
   )
 }
