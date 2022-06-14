@@ -32,6 +32,7 @@ object UserDAO extends SkinnyCRUDMapper[UserRecord] {
          updated_at = rs.get(n.updated_at),
          doctorid = rs.get(n.doctorid),
          full_name = rs.get(n.full_name)
+
       )
    }
 

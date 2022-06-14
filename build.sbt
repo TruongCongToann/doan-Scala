@@ -28,7 +28,7 @@ resolvers += "Akka Snapshot Repository" at "https://repo.akka.io/snapshots/"
 
 
 lazy val root = (project in file("."))
-   .enablePlugins(PlayScala, SbtWeb)
+   .enablePlugins(PlayScala, SbtWeb,JavaAppPackaging)
    .disablePlugins(PlayLayoutPlugin)
    .aggregate(application, domain, port, utility)
    .dependsOn(application, domain, port, utility)
